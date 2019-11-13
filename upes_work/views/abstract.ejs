@@ -1,0 +1,162 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#big{
+	font-size: 150%;
+}
+			
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: blue;
+  color: white;
+}
+</style>
+	</head>
+<h2 align="center">
+	EVALUATION RUBRIC: <b>Doctoral Thesis Defense (Abstract)</b>
+</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+		<b>Student ID:</b> <%= stuid %>
+    </div>
+    <div class="col-sm">
+		<b>Evaluator:</b> <%= ename %>
+    </div>
+    <div class="col-sm">
+		<b>Abstract Date Of Evaluation:</b> <%= dates %>
+    </div>
+  </div>
+</div>
+<form action="/success" method="POST">
+<div class="container">
+	<table id="customers">
+  <tr>
+    <th id="big">Evaluation</th>
+    <th>Unacceptable</th>
+    <th>Marginal</th>
+	<th>Acceptable</th>
+  </tr>
+  <tr>
+	  <td><b>1. Achievement of Aim and Objectives:</b>
+Stated solution clearly for the research problem; 
+Strategic breakdown of solution through objective is
+		  quantified and achievement is effective</td>
+    <td><input type="radio" name="val1" value="1">Objectives and thereby aim is
+incomplete or unmet</td>
+    <td><input type="radio" name="val1" value="2">Aim and Objectives are achieved
+but partially quantifiable in terms
+of outcomes</td>
+	  <td><input type="radio" name="val1" value="3">Aim and Objectively are clearly
+achieved and outcomes are
+also quantified in respective of
+them</td>
+  </tr>
+  <tr>
+	  <td><b>2. Stability in Methodology:</b>
+Sound state‐of‐the-art research methodology to solve;
+Used modern methods and tools associated in
+developing solution.</td>
+    <td><input type="radio" name="val2" value="1">Methodology is lacking usage of
+out-of-box techniques for more
+and effective solution</td>
+    <td><input type="radio" name="val2" value="2">Methodology is partially effective
+and has adapted from existing
+with very limited changes</td>
+	  <td><input type="radio" name="val2" value="3">Stability in the methodology is
+reflected with a definite state
+of art and has used very
+recent advancements to
+conduct </td>
+  </tr>
+  <tr>
+	  <td><b>3. Novelty and Contribution – Research Impact:</b>
+Demonstrated potential value of solution or 
+contribution to the research problem in advancing
+knowledge within and outside the area/field of study.
+Demonstrated awareness of broad implications or
+research; Broader impacts may include societal,
+economic, technical, ethical, technological or business
+aspects</td>
+    <td><input type="radio" name="val31" value="1">No Significant contribution made
+and no visible novelty
+demonstrated. Solution provided
+is obsolete, hence not very valued
+within or outside the field of study<br><br>
+	  <input type="radio" name="val32" value="1">Research is only theoretical, no
+commercial or practical aspect</td>
+    <td><input type="radio" name="val31" value="2">Demonstrated a decent
+contribution, however the
+contribution lacks novelty to make
+a greater impact to the field of
+study<br><br>
+		<input type="radio" name="val32" value="2">Research is having a commercial
+angle however, not explored</td>
+	  <td><input type="radio" name="val31" value="3">Quantitatively demonstrated
+Novelty in the research and
+made a potential contribution
+to conceptual / fundamental
+knowledge in the area of
+study. Demonstrated in SCI
+indexed publication<br><br><input type="radio" name="val32" value="3">Commercial aspect addressed
+through patent publication </td>
+  </tr>
+  <tr>
+	  <td><b>4. Validation of Results and Evaluation:</b>
+Demonstrated sound knowledge in the area,
+Prior literature on specific research problem.
+Analyzed and interpreted Research data effectively.</td>
+    <td><input type="radio" name="val4" value="1">Results obtained are not
+substantial enough to validate the
+achievement of aim. Poor
+evaluation shown</td>
+    <td><input type="radio" name="val4" value="2">Demonstrated relevant results to
+achieve aim and objectives,
+reflected the quality of results
+using SCOPUS indexed
+publication</td>
+	  <td><input type="radio" name="val4" value="3"> Extensive and critical results that
+demonstrate achievement of
+aim and contribution.
+Reflected the quality of results
+using premier SCI indexed
+publication</td>
+  </tr>
+  <tr>
+	  <td><b>5. Quality of Written and Oral Skills:</b>
+Research Thesis (a) written and (b) Defense</td>
+    <td><input type="radio" name="val5" value="1">Poor written and oral communication</td>
+    <td><input type="radio" name="val5" value="2">Marginal written and oral skills,
+have to improve the quality of
+draft and defense</td>
+	  <td><input type="radio" name="val5" value="3">Excellent writing and oral skills</td>
+  </tr>
+</table>
+	<br>
+	<h5>
+		Comments
+	</h5>
+	<textarea rows="4" cols="156" name="comment"></textarea>
+	<button type="submit" class="btn btn-primary">Submit</button>
+	</div>
+	</form>
+</html>
