@@ -1,6 +1,19 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script type="text/javascript">
+		function checkval(form){
+			if( form.val1.value<1 || form.val2.value<1 || form.val3.value<1 || form.a2.value<1 || form.b2.value<1 || form.c2.value<1 || form.a31.value<1 || form.a32.value<1 || form.a33.value<1 || form.a4.value<1 || form.b4.value<1 || form.c4.value<1 || form.a5.value<1 || form.b5.value<1 || form.c5.value<1 || form.a6.value<1 || form.b6.value<1 || form.a7.value<1 || form.b7.value<1 || form.a8.value<1 || form.b8.value<1 || form.c8.value<1)
+				{
+					alert("Please fill all the entries")
+					return false
+				}
+			else{
+				return true
+			}
+		}
+	</script>
+		
 		
 		<style>
 #customers {
@@ -47,7 +60,7 @@
     </div>
   </div>
 </div>
-	<form action="/final" method="POST">
+	<form action="/final/<%= stuid %>/<%= ename %>/<%= dates %>/<%= formtype %>" method="POST" onSubmit=" return checkval(this)">
 <div class="container">
 	<table id="customers">
   <tr>
@@ -227,13 +240,12 @@ Documentation is poor<br>
 			<td><input type="radio" name="a8" value="2">Organization is logical and
 adequate documentation<br>
 		<input type="radio" name="b8" value="2">Average oral skill<br>
-	  <input type="radio" name="c8" value="2">Unrealistic progress charted</td>
+	  <input type="radio" name="c8" value="2">Needs amendments for achievability</td>
 			
 			<td><input type="radio" name="a8" value="3">Organization and
 Documentation is poor<br>
 		<input type="radio" name="b8" value="3">Acceptable oral skill<br>
-	  <input type="radio" name="c8" value="3">Need amendments for
-achievability</td>
+	  <input type="radio" name="c8" value="3">Realistic Progress Charted</td>
 			
   </tr>
 </table>

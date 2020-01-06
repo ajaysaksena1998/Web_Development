@@ -1,7 +1,18 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
+		<script type="text/javascript">
+		function checkval(form){
+			if(form.val1.value<1 || form.val2.value<1 || form.val31.value<1 || form.val32.value<1 || form.val4.value<1 || form.val5.value<1)
+				{
+					alert("Please fill all the entries")
+					return false
+				}
+			else{
+				return true
+			}
+		}
+	</script>
 		<style>
 #customers {
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
@@ -47,7 +58,7 @@
     </div>
   </div>
 </div>
-<form action="/success" method="POST">
+<form action="/success/<%= stuid %>/<%= ename %>/<%= dates %>/<%= formtype %>" method="POST" onSubmit=" return checkval(this)">
 <div class="container">
 	<table id="customers">
   <tr>
@@ -89,35 +100,23 @@ recent advancements to
 conduct </td>
   </tr>
   <tr>
-	  <td><b>3. Novelty and Contribution – Research Impact:</b>
-Demonstrated potential value of solution or 
+	  <td><b>3. Novelty and Contribution – Research Impact:</b><br><br>
+Demonstrated potential value of solution through
 contribution to the research problem in advancing
-knowledge within and outside the area/field of study.
+knowledge within and outside the area/field of study.<br>
 Demonstrated awareness of broad implications or
 research; Broader impacts may include societal,
 economic, technical, ethical, technological or business
 aspects</td>
-    <td><input type="radio" name="val31" value="1">No Significant contribution made
-and no visible novelty
-demonstrated. Solution provided
+    <td><input type="radio" name="val31" value="1">No Significant novelty and contribution reflected. Solution provided
 is obsolete, hence not very valued
 within or outside the field of study<br><br>
-	  <input type="radio" name="val32" value="1">Research is only theoretical, no
-commercial or practical aspect</td>
+	  <input type="radio" name="val32" value="1">Limited to theoritical, no commercial aspect</td>
     <td><input type="radio" name="val31" value="2">Demonstrated a decent
-contribution, however the
-contribution lacks novelty to make
-a greater impact to the field of
-study<br><br>
+contribution, however lacks novelty to make a greater impact to the field of study<br><br>
 		<input type="radio" name="val32" value="2">Research is having a commercial
 angle however, not explored</td>
-	  <td><input type="radio" name="val31" value="3">Quantitatively demonstrated
-Novelty in the research and
-made a potential contribution
-to conceptual / fundamental
-knowledge in the area of
-study. Demonstrated in SCI
-indexed publication<br><br><input type="radio" name="val32" value="3">Commercial aspect addressed
+	  <td><input type="radio" name="val31" value="3">Demonstrated valid novelty and made potential contribution to fundamental / conceptul knowledge in areas of study<br><br><input type="radio" name="val32" value="3">Commercial aspect addressed
 through patent publication </td>
   </tr>
   <tr>
@@ -131,24 +130,18 @@ achievement of aim. Poor
 evaluation shown</td>
     <td><input type="radio" name="val4" value="2">Demonstrated relevant results to
 achieve aim and objectives,
-reflected the quality of results
-using SCOPUS indexed
-publication</td>
+reflected the quality of results</td>
 	  <td><input type="radio" name="val4" value="3"> Extensive and critical results that
 demonstrate achievement of
 aim and contribution.
-Reflected the quality of results
-using premier SCI indexed
-publication</td>
+Reflected the quality of results</td>
   </tr>
   <tr>
 	  <td><b>5. Quality of Written and Oral Skills:</b>
 Research Thesis (a) written and (b) Defense</td>
     <td><input type="radio" name="val5" value="1">Poor written and oral communication</td>
-    <td><input type="radio" name="val5" value="2">Marginal written and oral skills,
-have to improve the quality of
-draft and defense</td>
-	  <td><input type="radio" name="val5" value="3">Excellent writing and oral skills</td>
+    <td><input type="radio" name="val5" value="2">Marginal written and oral skills, seeds improvement</td>
+	  <td><input type="radio" name="val5" value="3">Publication quality written and oral skills</td>
   </tr>
 </table>
 	<br>

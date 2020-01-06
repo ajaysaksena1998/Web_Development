@@ -232,14 +232,14 @@ const fast=new mongoose.Schema({
 	},
 	val83:{
 	    type: Number	
-
+	},
 	sum:{
 	type:Number
 },
 	comment:{
 		type: String,
 		min: 3,
-		max:255
+		max: 1000
 	}
 })
 module.exports=mongoose.model('fast',fast)

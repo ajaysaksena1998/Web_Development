@@ -96,7 +96,7 @@ const user=new mongoose.Schema({
 	comment:{
 	type: String,
 		min: 3,
-		max:255
+		max: 1000
 }
 })
 module.exports=mongoose.model('users',user)
