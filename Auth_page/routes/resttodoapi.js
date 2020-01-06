@@ -3,7 +3,7 @@ const todos = require('../model/todos')
 const verify= require('./vertoken') 
 
 //Create a todo
-router.post("/create", verify ,async (req,res)=>{
+router.post("/create", async (req,res)=>{
 	const todo= new todos({
 		title:req.body.title,
 		description: req.body.description
